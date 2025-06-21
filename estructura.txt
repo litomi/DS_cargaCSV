@@ -2,17 +2,44 @@
 ├── estructura.txt
 ├── pom.xml
 ├── README.md
-└── src
-    ├── main
-    │   ├── java
-    │   │   └── com
-    │   │       └── utn
-    │   │           └── app
-    │   └── resources
-    └── test
-        └── java
-            └── com
-                └── utn
-                    └── app
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── utn
+│   │   │           └── app
+│   │   └── resources
+│   └── test
+│       ├── java
+│       │   └── com
+│       │       └── utn
+│       │           └── app
+│       │               └── ConexionBaseDeDatosTest.java
+│       └── resources
+│           └── db.test.properties
+└── target
+    ├── classes
+    ├── generated-sources
+    │   └── annotations
+    ├── generated-test-sources
+    │   └── test-annotations
+    ├── maven-status
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   └── default-compile
+    │       │       └── inputFiles.lst
+    │       └── testCompile
+    │           └── default-testCompile
+    │               ├── createdFiles.lst
+    │               └── inputFiles.lst
+    ├── surefire-reports
+    │   ├── com.utn.app.ConexionBaseDeDatosTest.txt
+    │   └── TEST-com.utn.app.ConexionBaseDeDatosTest.xml
+    └── test-classes
+        ├── com
+        │   └── utn
+        │       └── app
+        │           └── ConexionBaseDeDatosTest.class
+        └── db.test.properties
 
-13 directories, 3 files
+31 directories, 12 files
