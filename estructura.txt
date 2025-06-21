@@ -8,7 +8,14 @@
 │   │   │   └── com
 │   │   │       └── utn
 │   │   │           └── app
+│   │   │               ├── AlumnoDAO.java
+│   │   │               ├── App.java
+│   │   │               ├── EscritorBD.java
+│   │   │               ├── LectorCSV.java
+│   │   │               └── modelos
+│   │   │                   └── Alumno.java
 │   │   └── resources
+│   │       └── db.properties
 │   └── test
 │       ├── java
 │       │   └── com
@@ -19,27 +26,24 @@
 │           └── db.test.properties
 └── target
     ├── classes
+    │   ├── com
+    │   │   └── utn
+    │   │       └── app
+    │   │           ├── AlumnoDAO.class
+    │   │           ├── EscritorBD.class
+    │   │           ├── LectorCSV.class
+    │   │           └── modelos
+    │   │               └── Alumno.class
+    │   └── db.properties
     ├── generated-sources
     │   └── annotations
-    ├── generated-test-sources
-    │   └── test-annotations
     ├── maven-status
     │   └── maven-compiler-plugin
-    │       ├── compile
-    │       │   └── default-compile
-    │       │       └── inputFiles.lst
-    │       └── testCompile
-    │           └── default-testCompile
+    │       └── compile
+    │           └── default-compile
     │               ├── createdFiles.lst
     │               └── inputFiles.lst
-    ├── surefire-reports
-    │   ├── com.utn.app.ConexionBaseDeDatosTest.txt
-    │   └── TEST-com.utn.app.ConexionBaseDeDatosTest.xml
     └── test-classes
-        ├── com
-        │   └── utn
-        │       └── app
-        │           └── ConexionBaseDeDatosTest.class
         └── db.test.properties
 
-31 directories, 12 files
+28 directories, 19 files
