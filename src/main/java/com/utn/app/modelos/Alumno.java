@@ -1,8 +1,5 @@
 package com.utn.app.modelos;
 
-import java.time.LocalDate;
-
-import com.univocity.parsers.annotations.Format;
 import com.univocity.parsers.annotations.Parsed;
 
 public class Alumno {

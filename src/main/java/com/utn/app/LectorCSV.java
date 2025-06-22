@@ -17,6 +17,12 @@ public class LectorCSV implements Runnable {
     private String rutaArchivo;
     private int cantidadRegistros;
 
+    public LectorCSV(BlockingQueue<List<Alumno>> cola, String rutaArchivo, int cantidadRegistros) {
+        this.cola = cola;
+        this.rutaArchivo = rutaArchivo;
+        this.cantidadRegistros = cantidadRegistros;
+    }
+
     @Override
     public void run() {
         List<Alumno> lote = new ArrayList<>(cantidadRegistros);
@@ -43,7 +49,7 @@ public class LectorCSV implements Runnable {
                  */
                 lote.add(
                         new Alumno(
-                                registro.getInt("nro_lejago"),
+                                registro.getInt("nro_legajo"),
                                 registro.getString("nombre"),
                                 registro.getString("apellido"),
                                 registro.getString("nro_documento"),
