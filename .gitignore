@@ -18,5 +18,5 @@ Thumbs.db
 # Archivos de configuración locales (opcional)
 *.local
 
-#utilidades de desarrollo
-src/main/resources/alumnos.csv
+# Ignorar archivos de datos generados
+*.csv
