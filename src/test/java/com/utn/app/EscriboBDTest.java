@@ -75,8 +75,6 @@ public class EscriboBDTest {
         Alumno alumnoRedibido = lotePrueba.get(0);
         assertEquals(1, alumnoRedibido.getNro_legajo());
         assertEquals("Garmendia", alumnoRedibido.getApellido());
-
-
         
     }
 

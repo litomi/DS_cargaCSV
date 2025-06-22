@@ -27,7 +27,7 @@ public class AlumnoDAO {
 
     public void insertarLote(List<Alumno> lote){
         String sql = String.format("INSERT INTO alumnos("
-        + "nro_lejago," 
+        + "nro_legajo," 
         + "nombre," 
         + "apellido," 
         + "nro_documento," 
