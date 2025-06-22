@@ -4,25 +4,26 @@ import java.util.Random;
 
 /**
  * Utilidad para generar un archivo de pruebas
+ * javac GeneradorCSV.java
+ * java GeneradorCSV NUMERO_DE_REGISTROS RUTA_ARCHIVO_SALIDA
  */
 
 public class GeneradorCSV {
 
-    private static final int NUMERO_DE_REGISTROS = 2_500_000;
-    private static final String RUTA_ARCHIVO_SALIDA = "../src/main/resources/alumnos.csv";
+    private static int NUMERO_DE_REGISTROS = 2_500_000;
+    private static String RUTA_ARCHIVO_SALIDA = "alumnos.csv";
 
     public static void main(String[] args) {
-        long tiempoInicio = System.currentTimeMillis();
 
-        System.out.println("------------------------------->");
-        System.out.println(args[1] + 90);
-        System.out.println("------------------------------->");
-
-
+        if(args.length > 0){
+            NUMERO_DE_REGISTROS = Integer.parseInt(args[0]);
+            RUTA_ARCHIVO_SALIDA = args.length > 1? args[1]+".csv":RUTA_ARCHIVO_SALIDA;
+        }
+        
         System.out.println("Ejecutando generador de archivos.");
         System.out.println("Se generarán " + NUMERO_DE_REGISTROS + " de registros.");
 
-        
+        long tiempoInicio = System.currentTimeMillis();
         try (BufferedWriter escritor = new BufferedWriter(new FileWriter(RUTA_ARCHIVO_SALIDA))) {
             escritor.write(
                     "nro_legajo,"
