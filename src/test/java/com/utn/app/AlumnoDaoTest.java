@@ -67,6 +67,9 @@ public class AlumnoDaoTest {
         + "sexo VARCHAR(20)"
         + ");";
 
+        
+
+
         try(Connection conex = ds.getConnection()){
             PreparedStatement stmt = conex.prepareStatement(sql);
             stmt.execute();

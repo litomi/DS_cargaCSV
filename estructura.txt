@@ -15,35 +15,70 @@
 │   │   │               └── modelos
 │   │   │                   └── Alumno.java
 │   │   └── resources
+│   │       ├── alumnos.csv
 │   │       └── db.properties
 │   └── test
 │       ├── java
 │       │   └── com
 │       │       └── utn
 │       │           └── app
-│       │               └── ConexionBaseDeDatosTest.java
+│       │               ├── AlumnoDaoTest.java
+│       │               ├── ConexionBaseDeDatosTest.java
+│       │               ├── EscriboBDTest.java
+│       │               └── LectorCSVTest.java
 │       └── resources
 │           └── db.test.properties
-└── target
-    ├── classes
-    │   ├── com
-    │   │   └── utn
-    │   │       └── app
-    │   │           ├── AlumnoDAO.class
-    │   │           ├── EscritorBD.class
-    │   │           ├── LectorCSV.class
-    │   │           └── modelos
-    │   │               └── Alumno.class
-    │   └── db.properties
-    ├── generated-sources
-    │   └── annotations
-    ├── maven-status
-    │   └── maven-compiler-plugin
-    │       └── compile
-    │           └── default-compile
-    │               ├── createdFiles.lst
-    │               └── inputFiles.lst
-    └── test-classes
-        └── db.test.properties
+├── target
+│   ├── CargadoCSV-1.0-SNAPSHOT.jar
+│   ├── classes
+│   │   ├── alumnos.csv
+│   │   ├── com
+│   │   │   └── utn
+│   │   │       └── app
+│   │   │           ├── AlumnoDAO.class
+│   │   │           ├── App.class
+│   │   │           ├── EscritorBD.class
+│   │   │           ├── LectorCSV.class
+│   │   │           └── modelos
+│   │   │               └── Alumno.class
+│   │   └── db.properties
+│   ├── generated-sources
+│   │   └── annotations
+│   ├── generated-test-sources
+│   │   └── test-annotations
+│   ├── maven-archiver
+│   │   └── pom.properties
+│   ├── maven-status
+│   │   └── maven-compiler-plugin
+│   │       ├── compile
+│   │       │   └── default-compile
+│   │       │       ├── createdFiles.lst
+│   │       │       └── inputFiles.lst
+│   │       └── testCompile
+│   │           └── default-testCompile
+│   │               ├── createdFiles.lst
+│   │               └── inputFiles.lst
+│   ├── surefire-reports
+│   │   ├── com.utn.app.AlumnoDaoTest.txt
+│   │   ├── com.utn.app.ConexionBaseDeDatosTest.txt
+│   │   ├── com.utn.app.EscriboBDTest.txt
+│   │   ├── com.utn.app.LectorCSVTest.txt
+│   │   ├── TEST-com.utn.app.AlumnoDaoTest.xml
+│   │   ├── TEST-com.utn.app.ConexionBaseDeDatosTest.xml
+│   │   ├── TEST-com.utn.app.EscriboBDTest.xml
+│   │   └── TEST-com.utn.app.LectorCSVTest.xml
+│   └── test-classes
+│       ├── com
+│       │   └── utn
+│       │       └── app
+│       │           ├── AlumnoDaoTest.class
+│       │           ├── ConexionBaseDeDatosTest.class
+│       │           ├── EscriboBDTest$FalsoAlumnoDAO.class
+│       │           ├── EscriboBDTest.class
+│       │           └── LectorCSVTest.class
+│       └── db.test.properties
+└── utiles
+    ├── GeneradorCSV.class
+    └── GeneradorCSV.java
 
-28 directories, 19 files
+38 directories, 44 files
