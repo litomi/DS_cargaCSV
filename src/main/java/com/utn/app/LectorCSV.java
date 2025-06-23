@@ -38,7 +38,7 @@ public class LectorCSV implements Runnable {
 
             for (Record registro : parser.iterateRecords(lectorArchivo(rutaArchivo))) {
                 /*
-                 * nro_lejago,
+                 * nro_legajo,
                  * nombre,
                  * apellido,
                  * nro_documento,

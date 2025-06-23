@@ -24,3 +24,6 @@ Thumbs.db
 # Archivos de compilación
 *.jar
 *.class
+
+# Archivos de configuración
+*.properties

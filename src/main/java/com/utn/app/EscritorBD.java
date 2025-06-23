@@ -6,11 +6,11 @@ import java.util.concurrent.BlockingQueue;
 import com.utn.app.modelos.Alumno;
 
 public class EscritorBD implements Runnable{
-    private BlockingQueue<List<Alumno>> cole;
+    private BlockingQueue<List<Alumno>> cola;
     private AlumnoDAO alumnoDAO;
 
-    public EscritorBD(BlockingQueue<List<Alumno>> cole, AlumnoDAO alumnoDAO) {
-        this.cole = cole;
+    public EscritorBD(BlockingQueue<List<Alumno>> cola, AlumnoDAO alumnoDAO) {
+        this.cola = cola;
         this.alumnoDAO = alumnoDAO;
     }
 
@@ -18,7 +18,7 @@ public class EscritorBD implements Runnable{
     public void run() {
         try{
             while (true) {
-                List<Alumno> lote = cole.take();
+                List<Alumno> lote = cola.take();
                 if(lote.isEmpty()) break;
                 alumnoDAO.insertarLote(lote);
             }
