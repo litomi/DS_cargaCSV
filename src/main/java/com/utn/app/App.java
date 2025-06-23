@@ -1,9 +1,6 @@
 package com.utn.app;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
@@ -21,7 +18,8 @@ public class App {
     private static final int NRO_HILOS = Runtime.getRuntime().availableProcessors() * 2;
     private static final int CAPACIDAD_COLA = 15;
     private static final int CAPACIDAD_LOTE = 50_000;
-    private static final String RUTA_ARCHIVO = "src/main/resources/alumnos.csv";
+    // private static final String RUTA_ARCHIVO = "src/main/resources/alumnos.csv";
+    private static final String RUTA_ARCHIVO = "alumnos.csv";
 
 
     public static void main(String[] args) {
@@ -38,13 +36,12 @@ public class App {
             BlockingQueue<List<Alumno>> cola = new ArrayBlockingQueue<>(CAPACIDAD_COLA);
             ExecutorService ejecutorEscritores = Executors.newFixedThreadPool(NRO_HILOS);
 
-            for(int i = 0; i < NRO_HILOS; i++){
+            for(int i = 0; i < NRO_HILOS; i++){ 
                 ejecutorEscritores.submit(new EscritorBD(cola, alumnoDAO));
             }
 
             Thread hiloLectorCSV = new Thread(new LectorCSV(cola, RUTA_ARCHIVO, CAPACIDAD_LOTE));
             hiloLectorCSV.start();
-
             hiloLectorCSV.join();
 
             System.out.println("El lector del archivo ha finalizado.");

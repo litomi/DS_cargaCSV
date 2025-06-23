@@ -20,3 +20,7 @@ Thumbs.db
 
 # Ignorar archivos de datos generados
 *.csv
+
+# Archivos de compilación
+*.jar
+*.class
