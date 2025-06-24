@@ -29,3 +29,6 @@ dependency-reduced-pom.xml
 # Archivos de configuración
 db.test.properties
 db.properties
+
+#Incluir
+!dist/*.jar
