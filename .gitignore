@@ -24,6 +24,8 @@ Thumbs.db
 # Archivos de compilación
 *.jar
 *.class
+dependency-reduced-pom.xml
 
 # Archivos de configuración
-*.properties
+db.test.properties
+db.properties

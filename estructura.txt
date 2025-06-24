@@ -1,4 +1,10 @@
 .
+├── alumnos.csv
+├── db.ejemplo.properties
+├── db.properties
+├── dependency-reduced-pom.xml
+├── dist
+│   └── db.test ejemplo.properties
 ├── estructura.txt
 ├── pom.xml
 ├── README.md
@@ -15,8 +21,7 @@
 │   │   │               └── modelos
 │   │   │                   └── Alumno.java
 │   │   └── resources
-│   │       ├── alumnos.csv
-│   │       └── db.properties
+│   │       └── simplelogger.properties
 │   └── test
 │       ├── java
 │       │   └── com
@@ -27,11 +32,10 @@
 │       │               ├── EscriboBDTest.java
 │       │               └── LectorCSVTest.java
 │       └── resources
+│           ├── db.test ejemplo.properties
 │           └── db.test.properties
 ├── target
-│   ├── CargadoCSV-1.0-SNAPSHOT.jar
 │   ├── classes
-│   │   ├── alumnos.csv
 │   │   ├── com
 │   │   │   └── utn
 │   │   │       └── app
@@ -41,7 +45,7 @@
 │   │   │           ├── LectorCSV.class
 │   │   │           └── modelos
 │   │   │               └── Alumno.class
-│   │   └── db.properties
+│   │   └── simplelogger.properties
 │   ├── generated-sources
 │   │   └── annotations
 │   ├── generated-test-sources
@@ -76,9 +80,9 @@
 │       │           ├── EscriboBDTest$FalsoAlumnoDAO.class
 │       │           ├── EscriboBDTest.class
 │       │           └── LectorCSVTest.class
+│       ├── db.test ejemplo.properties
 │       └── db.test.properties
 └── utiles
-    ├── GeneradorCSV.class
     └── GeneradorCSV.java
 
-38 directories, 44 files
+39 directories, 47 files

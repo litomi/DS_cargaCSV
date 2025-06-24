@@ -2,7 +2,6 @@ package com.utn.app;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
@@ -18,8 +17,12 @@ import com.zaxxer.hikari.HikariDataSource;
 
 public class App {
     private static final int NRO_HILOS = Runtime.getRuntime().availableProcessors() * 2;
+    private static final int CAPACIDAD_COLA = 10;
+    private static final int CAPACIDAD_LOTE = 50000;
+    private static final String RUTA_ARCHIVO = "./alumnos.csv";
 
     public static void main(String[] args) {
+        
         long tiempoInicio = System.currentTimeMillis();
 
         System.out.println("Iniciando la aplicación...");
@@ -29,18 +32,10 @@ public class App {
         if (props == null) {
             System.err.println("ERROR: No se pudo cargar los datos de configuración.");
         } else {
-            System.out.println("Datos de configuación cargados.");
+            System.out.println("Datos de configuación cargados...");
         }
 
-        //Valores tomados desde el archivo de propiedades
-        final String RUTA_ARCHIVO = props.getProperty("csv.archivo", "alumnos.csv");
-        final int CAPACIDAD_COLA = Integer.parseInt(props.getProperty("app.capacidadCola", "10"));
-        final int CAPACIDAD_LOTE = Integer.parseInt(props.getProperty("app.capacidadLote", "15000"));
-
-        //Filtrado de las variables de configuración para Hikari
-        Properties propsHikari = filtrarPropiedadesHikari(props);
-
-        try (HikariDataSource ds = new HikariDataSource(new HikariConfig(propsHikari))) {
+        try (HikariDataSource ds = new HikariDataSource(new HikariConfig(props))) {
             System.out.println("Conexion a la base de datos establecida.");
 
             AlumnoDAO alumnoDAO = new AlumnoDAO(ds);
@@ -85,28 +80,13 @@ public class App {
 
     public static Properties cargaPropiedades() {
         Properties props = new Properties();
-        try (FileInputStream fis = new FileInputStream("app.properties")) {
+        try (FileInputStream fis = new FileInputStream("db.properties")) {
             props.load(fis);
         } catch (IOException e) {
-            System.err.println("No se pudo cargar app.properties: " + e.getMessage());
+            System.err.println("No se pudo cargar db.properties: " + e.getMessage());
             return null;
         }
         return props;
     }
 
-    public static Properties filtrarPropiedadesHikari(Properties props) {
-
-        Properties propiedades = new Properties();
-        for (String key : props.stringPropertyNames()) {
-            // para HikariCP
-            if (key.equals("jdbcUrl") ||
-                    key.equals("username") ||
-                    key.equals("password") ||
-                    key.equals("maximumPoolSize")) {
-                propiedades.setProperty(key, props.getProperty(key));
-            }
-        }
-
-        return propiedades;
-    }
 }

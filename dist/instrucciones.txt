@@ -1,0 +1,23 @@
+1.- Cambiar el nombre al archivo 'db.ejemplo.properties' a 'db.properties'.
+
+2.- Modificar en el archivo, lo siguiente, con tus datos:
+
+    # URL de conexión JDBC (ejemplo para PostgreSQL)
+    jdbcUrl=jdbc:postgresql://<host>:<puerto>/<nombre_base_de_datos>
+
+    # Credenciales de acceso
+    username=<usuario>
+    password=<contraseña>
+
+3.- Agregar el archivo CSV: 'alumnos.csv'. -Respetar el nombre-.
+
+    Ejemplo del contenido:
+    nro_legajo,nombre,apellido,nro_documento,tipo_documento,fecha_nacimiento,fecha_ingreso,sexo
+    100001,"Sofia Valentina Reyes","del Campo",20000001,DNI,12-11-1994,15-11-2021,M
+    100002,"Rosa Maria de la Paz","Sanz de la Rosa",20000002,Pasaporte, 4- 2-1994, 6- 7-2019,M
+    100003,"Juan de Dios Castro","Cardozo",20000003,LibretaEnrolamiento, 6- 5-1976,18-10-2020,M
+
+4.- Abrir la terminal, ingresar en la carpeta y ejecutar.
+
+    java -jar CargadorCSV-1.0-SNAPSHOT.jar
+
